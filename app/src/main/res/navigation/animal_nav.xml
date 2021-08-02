@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/animal_navigation"
+    app:startDestination="@id/listFragment2">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.myapplication.view.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/toList"
+            app:destination="@id/listFragment2" />
+        <argument
+            android:name="animal"
+            app:argType="com.example.myapplication.model.Animal" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment2"
+        android:name="com.example.myapplication.view.ListFragment2"
+        android:label="fragment_list2"
+        tools:layout="@layout/fragment_list2" >
+        <action
+            android:id="@+id/toDetail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
